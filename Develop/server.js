@@ -14,6 +14,9 @@ app.use(express.static("public"));
 
 //Routes 
 
+var htmlRoutes = require("./routes/htmlRoutes");
+app.use('/', htmlRoutes);
+
 // Listener
 
 app.listen(PORT, function() {
