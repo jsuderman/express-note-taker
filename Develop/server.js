@@ -1,6 +1,8 @@
 // Dependencies 
 
 var express = require("express");
+var html = require("./routes/htmlRoutes");
+var apiRoutes = require("./routes/apiRoutes");
 
 // Express Config
 
@@ -13,9 +15,18 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Routes 
+apiRoutes(app);
 
-var htmlRoutes = require("./routes/htmlRoutes");
-app.use('/', htmlRoutes);
+html(app);
+
+
+// app.use("/", html);
+
+
+// app.use("/", apiRoutes);
+
+
+
 
 // Listener
 
